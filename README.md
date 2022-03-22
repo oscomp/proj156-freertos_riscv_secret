@@ -1,12 +1,8 @@
-## secret-algorithm-base-freertos-riscv
-基于RISC-V的FreeRTOS国密算法功能实现
+一种基于Linux系统运行android11的解决方案
 
 
 ## 项目描述
-RISC-V（发音为“risk-five”）是一个基于精简指令集（RISC）原则的开源指令集架构（ISA）。与大多数指令集相比，RISC-V指令集可以自由地用于任何目的，允许任何人设计、制造和销售RISC-V芯片和软件。虽然这不是第一个开源指令集，但它具有重要意义，因为其设计使其适用于现代计算设备（如仓库规模云计算机、高端移动电话和微小嵌入式系统）。设计者考虑到了这些用途中的性能与功率效率。该指令集还具有众多支持的软件，这解决了新指令集通常的弱点。
-Free 即免费的，RTOS 全称是 Real Time Operating System，中文就是实时操作系统。
-FreeRTOS 是 RTOS 系统的一种，FreeRTOS 十分的小巧，可以在资源有限的微控制器中运行， FreeRTOS 也不仅仅局限于在微控制器中使用。
-该项目基于RISC-V和FreeRTOS实现国密算法，以增强对数据的安全保护。
+本项目的目标基于anbox实现android11系统在Linux（Ubuntu20）平台的正常运行。Anbox（Android in a box）Anbox 是一个基于容器的方法，可以在普通的 GNU/Linux 系统上启动完整的 Android 系统，它将Android应用放进密封的容器中，无需直接访问硬件或数据，所有硬件或数据的访问都是通过与主机上的anbox守护进程进行的，由于Anbox 直接跑在硬件上，没有软件模拟层，无需虚拟化硬件即可运行 Android，因此可以无缝桥接硬件加速功能。
 
 ## 所属赛道
 
@@ -24,22 +20,25 @@ FreeRTOS 是 RTOS 系统的一种，FreeRTOS 十分的小巧，可以在资源�
 
 ## 项目导师
 
-* 武耀威: wuyaowei@kylinos.cn
+* 张里阳: zhangliyang@kylinos.cn
 * 张志成: zhangzhicheng@kylinos.cn
 
 
 
 ## 难度
 
-中等
+高
 
 
 ## 特征
 
-* 使用 RISC-V架构
-* 满足国密算法要求
-* 满足性能要求
-* 编写测试用例，满足测试要求、所有接口覆盖测试。
+1.掌握android系统开机启动具体流程；
+2.了解android系统的分区方式及应用，
+3.学习android framework框架及进程间通信
+4.掌握docker容器技术，先脱离本项目学习docker相关命令
+5.掌握anbox与android系统通信过程
+6.安卓系统能够运行基本的软件（如：通讯录，闹铃，浏览器等）
+7.满足安装其它软件并较为流畅运行。 
 
 
 ## License
@@ -47,6 +46,10 @@ FreeRTOS 是 RTOS 系统的一种，FreeRTOS 十分的小巧，可以在资源�
 
 
 ## 预期目标
-* 基于RISC-V架构在freertos实现国密算法，实现对数据的加密解密，同时要满足性能的要求。
-* 实现基于freertos的SM3、SM4软算法。
-* 选择本项目的同学也可提出自己的新想法，得到导师认可支持后亦可加入预期目标或进阶特性
+基于 Anbox的方式将Android11运行在Linux系统上：
+
+1.下载编译android11系统并制作镜像；
+2.分析主机anbox守护进程源码与android系统通信的具体过程（图像渲染及传输、触控或鼠标）；
+3.分析android init进程启动过程以及各服务进程间通信；
+4.可对系统做一定裁剪，确保系统精简，稳定；
+5.选择本项目的同学也可提出自己的新想法，得到导师认可支持后亦可加入预期目标或进阶特性。
